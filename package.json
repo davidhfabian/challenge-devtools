@@ -1,0 +1,15 @@
+{
+  "name": "challenge-devtools",
+  "version": "1.0.0",
+  "description": "Challenge Mercado Libre",
+  "main": "index.js",
+  "private" : true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Fabian",
+  "license": "MIT",
+  "workspaces": [
+    "server", "client"
+  ]
+}
