@@ -9,6 +9,7 @@
   "author": "David Fabian",
   "license": "MIT",
   "devDependencies": {
+    "morgan": "^1.10.0",
     "ts-node-dev": "^1.1.8"
   }
 }
