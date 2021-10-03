@@ -2,14 +2,30 @@
   "name": "challenge-devtools",
   "version": "1.0.0",
   "description": "Challenge Mercado Libre",
+  "private": true,
   "main": "index.js",
-  "private" : true,
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "David Fabian",
   "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
+  },
   "workspaces": [
-    "server", "client"
-  ]
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "lint": "ts-standard client/src/*.{ts,tsx}",
+    "lint:fix": "ts-standard client/src/*.{ts,tsx} --fix",
+    "postinstall": "husky install",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^13.2.0",
+    "@commitlint/config-conventional": "^13.2.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "ts-standard": "^10.0.0",
+    "typescript": "^4.4.3"
+  }
 }

@@ -1,0 +1,6 @@
+{
+  "*.ts, *.tsx": [
+    "ts-standard client/src/*.{ts,tsx} --fix",
+    "git add"
+  ]
+}
