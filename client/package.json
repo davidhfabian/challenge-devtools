@@ -1,5 +1,6 @@
 {
   "name": "client",
+  "description": "Client challenge Mercado Libre",
   "version": "0.1.0",
   "private": true,
   "scripts": {
