@@ -1,0 +1,13 @@
+{
+  "app": {
+    "port": 8000,
+    "apiUrl": "api/v1"
+  },
+  "db": {
+    "host": "localhost",
+    "nameDatabase": "challenge-meli",
+    "username": "postgres",
+    "password": "meli",
+    "dialect": "postgres"
+  }
+}
