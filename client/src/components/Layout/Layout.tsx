@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Box, Container, Flex, useColorModeValue } from '@chakra-ui/react'
+import { Box, Container, useColorModeValue, VStack } from '@chakra-ui/react'
 import { Header } from 'components/Header'
 
 export const Layout: FC = ({ children }) => {
@@ -7,13 +7,13 @@ export const Layout: FC = ({ children }) => {
 
   return (
     <Box borderTop='6px solid' borderTopColor='#FFF059' bgColor={bgColor}>
-      <Flex direction='column' maxW={{ xl: '1200px' }} m='0 auto'>
+      <VStack maxW={{ xl: '1200px' }} m='0 auto'>
         <Header />
-        <Container as='section' h={2000}>
+        <Container as='section' h={2000} py='10' maxW='xl' centerContent>
           {children}
         </Container>
         {/** <Footer /> */}
-      </Flex>
+      </VStack>
     </Box>
   )
 }
