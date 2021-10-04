@@ -1,19 +1,19 @@
 import React, { FC } from 'react'
-import { Flex } from '@chakra-ui/react'
+import { Box, Container, Flex, useColorModeValue } from '@chakra-ui/react'
 import { Header } from 'components/Header'
 
-interface OwnProps {
-  title?: string
-}
+export const Layout: FC = ({ children }) => {
+  const bgColor = useColorModeValue('gray.50', 'gray.800') // 'gray.900'
 
-type Props = OwnProps
-
-export const Layout: FC<Props> = ({ title = '', children }) => {
   return (
-    <Flex direction='column' align='center' maxW={{ xl: '1200px' }} m='0 auto'>
-      <Header title={title} />
-      {children}
-      {/** <Footer /> */}
-    </Flex>
+    <Box borderTop='6px solid' borderTopColor='#FFF059' bgColor={bgColor}>
+      <Flex direction='column' maxW={{ xl: '1200px' }} m='0 auto'>
+        <Header />
+        <Container as='section' h={2000}>
+          {children}
+        </Container>
+        {/** <Footer /> */}
+      </Flex>
+    </Box>
   )
 }
