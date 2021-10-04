@@ -14,9 +14,10 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
+    "strictNullChecks": true,
+    "resolveJsonModule": true,
     "paths": {
       "@client/*": ["client/src*"]
-    },
-    "strictNullChecks": true
     }
   }
+}
