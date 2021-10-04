@@ -1,11 +1,11 @@
-import React, { FC } from 'react'
-import { Heading } from '@chakra-ui/react'
+import { FC } from 'react'
 import { Layout } from 'components/Layout'
+import { ServerLog } from './components/ServerLog'
 
 export const Home: FC = () => {
   return (
     <Layout>
-      <Heading as='h4' size='md'>Buscador de servicios</Heading>
+      <ServerLog />
     </Layout>
   )
 }
