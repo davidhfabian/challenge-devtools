@@ -4,11 +4,24 @@
   "description": "Server challenge Mercado Libre",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node-dev --transpile-only ./src/app.ts",
+    "build": "tsc --listEmittedFiles "
   },
   "author": "David Fabian",
   "license": "MIT",
+  "dependencies": {
+    "config": "^3.3.6",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.6.5"
+  },
   "devDependencies": {
+    "@types/config": "^0.0.39",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
     "morgan": "^1.10.0",
     "ts-node-dev": "^1.1.8"
   }
