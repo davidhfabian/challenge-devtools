@@ -1,4 +1,4 @@
-export const MeliLogo: any = (props: any) => {
+export const MeliLogo = (props: React.SVGProps<SVGSVGElement>): JSX.Element => {
   return (
     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' height={40} width={40} {...props}>
       <style>{'.prefix__st0{fill:#000f9f}.prefix__st2{fill:#fff}'}</style>

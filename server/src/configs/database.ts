@@ -12,7 +12,6 @@ const {
 const database = new Sequelize(nameDatabase, username, password, {
   host,
   dialect
-  // logging: false,
 })
 
 export default database

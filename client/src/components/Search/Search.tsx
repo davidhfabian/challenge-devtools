@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import { FC } from 'react'
 import {
   Input,
   InputGroup,
@@ -8,39 +8,40 @@ import {
 import { SearchIcon, CloseIcon } from '@chakra-ui/icons'
 
 interface OwnProps {
-  title?: string
+  search: string
+  handleSearch: (value: string) => void
 }
 
 type Props = OwnProps
 
-export const Search: FunctionComponent<Props> = (props) => {
-  const handleChange: () => void = () => 'asdsa'
-
+export const Search: FC<Props> = ({ handleSearch, search }) => {
   return (
     <InputGroup>
       <InputLeftElement pointerEvents='none'>
         <SearchIcon color='gray.400' />
       </InputLeftElement>
       <Input
+        tabIndex={1}
         variant='filled'
-        type='search'
-        placeholder='Search by server name or description...'
+        value={search}
+        placeholder='Search by description or server...'
         autoComplete='none'
         autoFocus
-        onChange={handleChange}
+        onChange={(evt) => handleSearch(evt.target.value)}
         color='gray.600'
+        appearance='none'
         {...{
-          rounded: 'xl',
+          rounded: 'base',
           bg: '#EEEEEE',
           _hover: { borderColor: '#AAAAAA' },
           _focus: { borderColor: '#AAAAAA' },
           _placeholder: { color: 'gray.400' }
         }}
-        {...props}
       />
-      <InputRightElement>
-        <CloseIcon color='gray.400' />
-      </InputRightElement>
+      {search && (
+        <InputRightElement>
+          <CloseIcon color='gray.400' onClick={() => handleSearch('')} />
+        </InputRightElement>)}
     </InputGroup>
   )
 }

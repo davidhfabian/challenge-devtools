@@ -14,9 +14,12 @@
     "@craco/craco": "^6.3.0",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
+    "axios": "^0.22.0",
     "framer-motion": "^4.1.17",
+    "nanoid": "^3.1.29",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-infinite-scroll-component": "^6.1.0",
     "react-scripts": "4.0.3",
     "react-table": "^7.7.0",
     "web-vitals": "^1.1.2"

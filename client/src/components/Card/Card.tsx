@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Box, Heading, useColorModeValue, VStack } from '@chakra-ui/react'
+import { Box, Heading, useColorModeValue } from '@chakra-ui/react'
 
 interface OwnProps {
   title?: string
@@ -8,7 +8,7 @@ interface OwnProps {
 type Props = OwnProps
 
 export const Card: FC<Props> = ({ children, title = '' }) => {
-  const bgColor = useColorModeValue('white', 'gray.800')
+  const bgColor = useColorModeValue('white', 'gray.700')
   const colorHeading = useColorModeValue('gray.700', 'white')
   const colorHeadingHover = useColorModeValue('gray.600', 'gray.200')
 
@@ -17,10 +17,11 @@ export const Card: FC<Props> = ({ children, title = '' }) => {
       mx='auto'
       px={8}
       py={4}
+      bg={bgColor}
       rounded='base'
       shadow='base'
-      bg={bgColor}
       w='full'
+      h='xxl'
     >
       <Box mt={2}>
         <Heading
@@ -36,9 +37,9 @@ export const Card: FC<Props> = ({ children, title = '' }) => {
           {title}
         </Heading>
       </Box>
-      <VStack mt={4}>
+      <Box mt={4}>
         {children}
-      </VStack>
+      </Box>
     </Box>
   )
 }

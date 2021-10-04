@@ -1,13 +1,10 @@
 import express, { Application } from 'express'
-import cors from 'cors'
-// import serverRoutes from '../routes/server'
-import database from './database'
 import config from 'config'
-
-interface AppConfig {
-  port: number
-  apiUrl: string
-}
+import cors from 'cors'
+import morgan from 'morgan'
+import database from './database'
+import { serverRoutes, serverLogRoutes } from '../routes'
+import { AppConfig } from '../utils/interfaces'
 
 const { port, apiUrl }: AppConfig = config.get('app')
 
@@ -16,18 +13,19 @@ class Server {
   private readonly port: number
   private readonly apiPaths = {
     server: `${apiUrl}/server`,
-    log: `${apiUrl}/log`
+    serverLog: `${apiUrl}/server-log`
   }
 
   constructor () {
     this.app = express()
     this.port = port
 
-    // this.dbConnection()
-    this.middleware()
+    this.dbConnect()
+    this.middlewares()
+    this.routes()
   }
 
-  async dbConnection () {
+  async dbConnect () {
     try {
       await database.authenticate()
       console.log('Database connection established')
@@ -36,10 +34,16 @@ class Server {
     }
   }
 
-  middleware () {
+  middlewares () {
     this.app.use(cors())
     this.app.use(express.json())
-    this.app.use(express.static('public'))
+    this.app.use(morgan('tiny'))
+    this.app.use(express.static('../client/build'))
+  }
+
+  routes () {
+    this.app.use(this.apiPaths.server, serverRoutes)
+    this.app.use(this.apiPaths.serverLog, serverLogRoutes)
   }
 
   listen () {

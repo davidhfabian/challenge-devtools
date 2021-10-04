@@ -6,10 +6,10 @@ export const Layout: FC = ({ children }) => {
   const bgColor = useColorModeValue('gray.50', 'gray.800') // 'gray.900'
 
   return (
-    <Box borderTop='6px solid' borderTopColor='#FFF059' bgColor={bgColor}>
+    <Box borderTop='6px solid' borderTopColor='#FFF059' h='100vh' bgColor={bgColor}>
       <VStack maxW={{ xl: '1200px' }} m='0 auto'>
         <Header />
-        <Container as='section' h={2000} py='10' maxW='xl' centerContent>
+        <Container as='section' py='10' maxW='4xl' centerContent>
           {children}
         </Container>
         {/** <Footer /> */}

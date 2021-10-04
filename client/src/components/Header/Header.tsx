@@ -29,7 +29,7 @@ export const Header: FC = () => {
       <chakra.div h='4.5rem' mx='auto' maxW='1200px'>
         <Flex w='full' h='full' px='6' align='center' justify='space-between'>
           <Flex align='center'>
-            <Link href='/' tabIndex={1} role='button' aria-label='Mercado Libre'>
+            <Link href='/' tabIndex={2} role='button' aria-label='Mercado Libre'>
               <HStack>
                 <MeliLogo />
               </HStack>
@@ -43,7 +43,7 @@ export const Header: FC = () => {
             color='gray.400'
           >
             <IconButton
-              tabIndex={2}
+              tabIndex={3}
               rele='button'
               size='md'
               fontSize='lg'
