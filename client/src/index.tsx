@@ -1,7 +1,7 @@
 
 import ReactDOM from 'react-dom'
-import App from './App'
-import AppProviders from './AppProviders'
+import App from 'App'
+import AppProviders from 'AppProviders'
 
 ReactDOM.render(
   <AppProviders>
