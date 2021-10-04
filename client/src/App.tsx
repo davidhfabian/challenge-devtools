@@ -1,12 +1,8 @@
 import { FC } from 'react'
-import { Header } from 'components/Header'
+import { Home } from 'pages/Home'
 
-const App: FC = () => {
-  return (
-    <div className='App'>
-      <Header />
-    </div>
-  )
-}
+const App: FC = () => (
+  <Home />
+)
 
 export default App
