@@ -1,8 +1,14 @@
 import React, { FC } from 'react'
 import { Heading } from '@chakra-ui/react'
 
-export const Header: FC = () => {
+interface OwnProps {
+  title: string
+}
+
+type Props = OwnProps
+
+export const Header: FC<Props> = ({ title = '' }) => {
   return (
-    <Heading>Mercado Libre - Challenges</Heading>
+    <Heading>{title}</Heading>
   )
 }
