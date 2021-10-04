@@ -4,7 +4,7 @@ import { Layout } from 'components/Layout'
 
 export const Home: FC = () => {
   return (
-    <Layout title='Mercado Libre Challenge'>
+    <Layout>
       <Heading as='h4' size='md'>Buscador de servicios</Heading>
     </Layout>
   )
